@@ -2,7 +2,7 @@
 <div>
     <?php
     include("../db/dbconn.php");
-    $id = $_GET['id']; // ID produk
+    $id = $_GET['id'];
     ?>
     <div class="login_title"><span>Stock OUT</span></div>
     <br>
@@ -10,14 +10,14 @@
         <table class="login">
             <tr>
                 <td>
-                    <input type="hidden" name="pid" autocomplete="off" class="input-large number" id="text" 
-                    value="<?php echo $id; ?>" required />
+                    <input type="hidden" name="pid" autocomplete="off" class="input-large number" id="text"
+                        value="<?php echo $id; ?>" required />
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="number" name="new_stck" autocomplete="off" class="input-large number" id="text" 
-                    placeholder="Enter No. of Stock" required />
+                    <input type="number" name="new_stck" autocomplete="off" class="input-large number" id="text"
+                        placeholder="Enter No. of Stock" required />
                 </td>
             </tr>
             <tr>
@@ -30,4 +30,3 @@
         </table>
     </form>
 </div>
-<!-- /end facebox -->

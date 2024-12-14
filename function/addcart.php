@@ -2,7 +2,6 @@
 
 if (isset($_POST['add'])) {
 
-
 	$prod_id = $_POST['product_id'];
 	$cust_id = $_POST['customerid'];
 

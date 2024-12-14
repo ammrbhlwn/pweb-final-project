@@ -6,9 +6,7 @@ if (isset($_POST['login'])) {
 	$email = $_POST['email'];
 	$password = $_POST['password'];
 
-
-	$result = mysqli_query($conn, "SELECT * FROM customer WHERE email='$email' AND password='$password' ")
-		or die('cannot login' . mysqli_error());
+	$result = mysqli_query($conn, "SELECT * FROM customer WHERE email='$email' AND password='$password' ");
 	$row = mysqli_fetch_array($result);
 	$run_num_rows = mysqli_num_rows($result);
 
