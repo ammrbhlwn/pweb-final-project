@@ -1,5 +1,5 @@
 <?php
-include('db/dbconn.php');
+include('./db/dbconn.php');
 if (isset($_POST['pay_now'])) {
 	$cid = $_SESSION['id'];
 	$total = $_POST['total'];

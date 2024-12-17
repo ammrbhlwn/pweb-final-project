@@ -36,7 +36,7 @@ include("function/customer_signup.php");
 				?>
 					<ul>
 						<li><a href="function/logout.php">Logout</a></li>
-						<li><a href="#profile" data-toggle="modal"><?php echo $fetch['firstname'] . " " . $fetch['lastname']; ?></a></li>
+						<li><a href="account.php"><?php echo $fetch['name']; ?></a></li>
 					</ul>
 				<?php } else { ?>
 					<a href="#login" data-toggle="modal" class="btn-auth">Login</a>
@@ -72,13 +72,10 @@ include("function/customer_signup.php");
 		<div class="modal-body">
 			<center>
 				<form method="post">
-					<input type="text" name="firstname" placeholder="Firstname" required>
-					<input type="text" name="mi" placeholder="Middle Initial" maxlength="1" required>
-					<input type="text" name="lastname" placeholder="Lastname" required>
+					<input type="text" name="name" placeholder="name" required>
 					<input type="text" name="address" placeholder="Address" style="width:430px;" required>
-					<input type="text" name="country" placeholder="Province" required>
+					<input type="text" name="country" placeholder="Country" required>
 					<input type="text" name="zipcode" placeholder="ZIP Code" required maxlength="4">
-					<input type="text" name="mobile" placeholder="Mobile Number" maxlength="11">
 					<input type="text" name="telephone" placeholder="Telephone Number" maxlength="8">
 					<input type="email" name="email" placeholder="Email" required>
 					<input type="password" name="password" placeholder="Password" required>
@@ -130,7 +127,7 @@ include("function/customer_signup.php");
 						<table>
 							<tr>
 								<td class="profile">Name:</td>
-								<td class="profile"><?php echo $fetch['firstname']; ?>&nbsp;<?php echo $fetch['mi']; ?>&nbsp;<?php echo $fetch['lastname']; ?></td>
+								<td class="profile"><?php echo $fetch['name']; ?>; ?></td>
 							</tr>
 							<tr>
 								<td class="profile">Address:</td>
@@ -143,10 +140,6 @@ include("function/customer_signup.php");
 							<tr>
 								<td class="profile">ZIP Code:</td>
 								<td class="profile"><?php echo $fetch['zipcode']; ?></td>
-							</tr>
-							<tr>
-								<td class="profile">Mobile Number:</td>
-								<td class="profile"><?php echo $fetch['mobile']; ?></td>
 							</tr>
 							<tr>
 								<td class="profile">Telephone Number:</td>
@@ -169,12 +162,12 @@ include("function/customer_signup.php");
 	<main>
 		<section class="product">
 			<div class="cat-container">
-				<h2>CASUAL</h2>
+				<h2>Basketball</h2>
 				<a href="product.php">View All</a>
 			</div>
 			<div class="product-list">
 				<?php
-				$query = mysqli_query($conn, "SELECT * FROM product WHERE category='feature' ORDER BY product_id ASC LIMIT 5");
+				$query = mysqli_query($conn, "SELECT * FROM product WHERE category='Basketball' ORDER BY product_id ASC LIMIT 5");
 
 				while ($fetch = mysqli_fetch_array($query)) {
 					$pid = $fetch['product_id'];
@@ -198,12 +191,12 @@ include("function/customer_signup.php");
 		</section>
 		<section class="product">
 			<div class="cat-container">
-				<h2>SNEAKERS</h2>
+				<h2>Football</h2>
 				<a href="football.php">View All</a>
 			</div>
 			<div class="product-list">
 				<?php
-				$query = mysqli_query($conn, "SELECT * FROM product WHERE category='feature' ORDER BY product_id ASC LIMIT 5");
+				$query = mysqli_query($conn, "SELECT * FROM product WHERE category='Football' ORDER BY product_id ASC LIMIT 5");
 
 				while ($fetch = mysqli_fetch_array($query)) {
 					$pid = $fetch['product_id'];
@@ -227,12 +220,12 @@ include("function/customer_signup.php");
 		</section>
 		<section class="product">
 			<div class="cat-container">
-				<h2>SPORT</h2>
+				<h2>Running</h2>
 				<a href="running.php">View All</a>
 			</div>
 			<div class="product-list">
 				<?php
-				$query = mysqli_query($conn, "SELECT * FROM product WHERE category='feature' ORDER BY product_id ASC LIMIT 5");
+				$query = mysqli_query($conn, "SELECT * FROM product WHERE category='Running' ORDER BY product_id ASC LIMIT 5");
 
 				while ($fetch = mysqli_fetch_array($query)) {
 					$pid = $fetch['product_id'];

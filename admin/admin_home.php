@@ -18,7 +18,6 @@ include("../db/dbconn.php");
 				<li><a href="admin_home.php">Dashboard</a></li>
 				<li><a href="admin_home.php">Products</a>
 					<ul>
-						<li><a href="admin_feature.php ">Features</a></li>
 						<li><a href="admin_product.php ">Basketball</a></li>
 						<li><a href="admin_football.php">Football</a></li>
 						<li><a href="admin_running.php">Running</a></li>

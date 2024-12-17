@@ -34,7 +34,7 @@ include("db/dbconn.php");
 				?>
 					<ul>
 						<li><a href="function/logout.php" class="btn-auth">Logout</a></li>
-						<li><a href=" #profile" data-toggle="modal" class="btn-auth"> <?php echo $fetch['firstname']; ?> <?php echo $fetch['lastname']; ?></a></li>
+						<li><a href="account.php" class="btn-auth"> <?php echo $fetch['name']; ?></a></li>
 					</ul>
 				<?php
 				} else {
@@ -67,7 +67,7 @@ include("db/dbconn.php");
 						<table>
 							<tr>
 								<td class="profile">Name:</td>
-								<td class="profile"><?php echo $fetch['firstname']; ?>&nbsp;<?php echo $fetch['mi']; ?>&nbsp;<?php echo $fetch['lastname']; ?></td>
+								<td class="profile"><?php echo $fetch['name']; ?></td>
 							</tr>
 							<tr>
 								<td class="profile">Address:</td>
@@ -80,10 +80,6 @@ include("db/dbconn.php");
 							<tr>
 								<td class="profile">ZIP Code:</td>
 								<td class="profile"><?php echo $fetch['zipcode']; ?></td>
-							</tr>
-							<tr>
-								<td class="profile">Mobile Number:</td>
-								<td class="profile"><?php echo $fetch['mobile']; ?></td>
 							</tr>
 							<tr>
 								<td class="profile">Telephone Number:</td>

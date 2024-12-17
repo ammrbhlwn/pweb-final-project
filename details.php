@@ -1,8 +1,6 @@
 <?php
 include("function/session.php");
-include("db/dbconn.php");
-include("function/cash.php");
-include("function/paypal.php");
+include("./db/dbconn.php")
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,7 +34,7 @@ include("function/paypal.php");
 				?>
 					<ul>
 						<li><a href="function/logout.php">Logout</a></li>
-						<li><a href="#profile" data-toggle="modal"><?php echo $fetch['firstname'] . " " . $fetch['lastname']; ?></a></li>
+						<li><a href="account.php"><?php echo $fetch['name']; ?></a></li>
 					</ul>
 				<?php } else { ?>
 					<a href="#login" data-toggle="modal" class="btn-auth">Login</a>
@@ -64,7 +62,7 @@ include("function/paypal.php");
 						<table>
 							<tr>
 								<td class="profile">Name:</td>
-								<td class="profile"><?php echo $fetch['firstname']; ?>&nbsp;<?php echo $fetch['mi']; ?>&nbsp;<?php echo $fetch['lastname']; ?></td>
+								<td class="profile"><?php echo $fetch['name']; ?></td>
 							</tr>
 							<tr>
 								<td class="profile">Address:</td>
@@ -77,10 +75,6 @@ include("function/paypal.php");
 							<tr>
 								<td class="profile">ZIP Code:</td>
 								<td class="profile"><?php echo $fetch['zipcode']; ?></td>
-							</tr>
-							<tr>
-								<td class="profile">Mobile Number:</td>
-								<td class="profile"><?php echo $fetch['mobile']; ?></td>
 							</tr>
 							<tr>
 								<td class="profile">Telephone Number:</td>
@@ -119,62 +113,6 @@ include("function/paypal.php");
 					</center>
 				</div>
 			<?php } ?>
-
-			<div id="purchase" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:400px;">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-					<h3 id="myModalLabel">Mode Of Payment</h3>
-				</div>
-				<div class="modal-body">
-					<form method="post">
-						<center>
-							<input type="hidden" name="product_price" value="<?php echo $row['product_price'] ?>">
-							<input type="hidden" name="product_name" value="<?php echo $row['product_name'] ?>">
-							<input type="hidden" value="<?php echo $fetch['firstname']; ?>&nbsp;<?php echo $fetch['lastname']; ?>" name="customer">
-							<textarea name="destination" placeholder="Destination" style="height:100px; width:250px;" required></textarea>
-							<select name="size" required style="width:150px;">
-								<option value="">---------Size----------</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10">10</option>
-								<option value="11">11</option>
-								<option value="12">12</option>
-							</select>
-							<br />
-							<h4>Total: Rp <?php echo $row['product_price']; ?> </h4>
-							<br />
-							<input type="checkbox" required> I Agree the <a href="#terms" data-toggle="modal"> Terms and Condition</a> of Footwearin. Inc.
-						</center>
-				</div>
-				<div class="modal-footer">
-					<center>
-						<input type="image" src="images/button.jpg" border="0" name="paypal" alt="Make payments with PayPal - it's fast, free and secure!" />
-						<input type="submit" name="cash" value="Cash" class="btn btn-lg">
-					</center>
-					<button class="btn btn-danger btn-mini" data-dismiss="modal" aria-hidden="true">Cancel</button>
-					</form>
-				</div>
-			</div>
-
-			<div id="terms" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:400px;">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-					<h3 id="myModalLabel">Footwearin. Inc. Terms and Condition</h3>
-				</div>
-				<div class="modal-body">
-					<ul>
-						<li>You are guaranteed that your product will be deliver 2-3 days upon ordering.</li>
-						<li>Guaranteed time maybe suspended depending on the weather conditions for the safety of our delivery personnel.</li>
-						<li>All prices quoted are in Philippine pesos. Price and availability information is subject to change without notice.</li>
-						<li>Mode of payment are as follows:customers with paypal account can pay through paypal otherwise Cash on Delivery(COD).</li>
-						<li>Upon receiving your product we will charge for delivering for only 150 pesos, depending on the location.</li>
-					</ul>
-				</div>
-				<div class="modal-footer">
-					<button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Close</button>
-				</div>
-			</div>
 		</div>
 	</main>
 

@@ -13,17 +13,6 @@ include("../db/dbconn.php");
 	<script src="../js/jquery-1.7.2.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../javascripts/filter.js" type="text/javascript" charset="utf-8"></script>
-
-	<!--Le Facebox-->
-	<link href="../facefiles/facebox.css" media="screen" rel="stylesheet" type="text/css" />
-	<script src="../facefiles/jquery-1.9.js" type="text/javascript"></script>
-	<script src="../facefiles/jquery-1.2.2.pack.js" type="text/javascript"></script>
-	<script src="../facefiles/facebox.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$('a[rel*=facebox]').facebox()
-		})
-	</script>
 </head>
 
 <body>
@@ -117,7 +106,6 @@ include("../db/dbconn.php");
 				<li><a href="admin_home.php">Dashboard</a></li>
 				<li><a href="admin_home.php">Products</a>
 					<ul>
-						<li><a href="admin_feature.php ">Features</a></li>
 						<li><a href="admin_product.php ">Basketball</a></li>
 						<li><a href="admin_football.php">Football</a></li>
 						<li><a href="admin_running.php">Running</a></li>
@@ -240,8 +228,6 @@ include("../db/dbconn.php");
 
 
 			if (confirm("Are you sure you want to delete this product?")) {
-
-
 				$.ajax({
 					type: "POST",
 					url: "../function/remove.php",

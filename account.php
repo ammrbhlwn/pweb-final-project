@@ -14,26 +14,6 @@ include("db/dbconn.php");
 </head>
 
 <body>
-	<div id="header">
-		<img src="img/logoFootwearin.png">
-		<ul>
-			<li><a href="index.php">Home</a></li>
-			<li><a href="aboutus.php">About</a></li>
-			<li><a href="product.php">Merch</a></li>
-		</ul>
-
-		<?php
-		$id = (int) $_SESSION['id'];
-
-		$query = mysqli_query($conn, "SELECT * FROM customer WHERE customerid = '$id' ");
-		$fetch = mysqli_fetch_array($query);
-		?>
-
-		<ul>
-			<li><a href="function/logout.php"><i class="icon-off icon-white"></i>logout</a></li>
-			<li><a href="#profile" href data-toggle="modal">Welcome:&nbsp;&nbsp;&nbsp;<i class="icon-user icon-white"></i><?php echo $fetch['firstname']; ?>&nbsp;<?php echo $fetch['lastname']; ?></a></li>
-		</ul>
-	</div>
 	<div id="container">
 
 
@@ -43,13 +23,10 @@ include("db/dbconn.php");
 
 		$query = mysqli_query($conn, "SELECT * FROM customer WHERE customerid = '$id' ");
 		$fetch = mysqli_fetch_array($query); {
-			$firstname = $fetch['firstname'];
-			$mi = $fetch['mi'];
-			$lastname = $fetch['lastname'];
+			$name = $fetch['name'];
 			$address = $fetch['address'];
 			$country = $fetch['country'];
 			$zipcode = $fetch['zipcode'];
-			$mobile = $fetch['mobile'];
 			$telephone = $fetch['telephone'];
 			$email = $fetch['email'];
 			$password = $fetch['password'];
@@ -59,35 +36,23 @@ include("db/dbconn.php");
 		<div id="account">
 			<form method="POST" action="function/edit_customer.php">
 				<center>
-					<h3>Edit My Account...</h3>
+					<h3>Edit My Account</h3>
 					<table>
 						<tr>
-							<td>Firstname:</td>
-							<td><input type="text" name="firstname" placeholder="Firstname" required value="<?php echo $firstname; ?>"></td>
-						</tr>
-						<tr>
-							<td>M.I. :</td>
-							<td><input type="text" name="mi" placeholder="Middle Initial" maxlength="1" required value="<?php echo $mi; ?>"></td>
-						</tr>
-						<tr>
-							<td>Lastname:</td>
-							<td><input type="text" name="lastname" placeholder="Lastname" required value="<?php echo $lastname; ?>"></td>
+							<td>Name:</td>
+							<td><input type="text" name="name" placeholder="name" required value="<?php echo $name; ?>"></td>
 						</tr>
 						<tr>
 							<td>Address:</td>
 							<td><input type="text" name="address" placeholder="Address" style="width:430px;" required value="<?php echo $address; ?>"></td>
 						</tr>
 						<tr>
-							<td>Province:</td>
-							<td><input type="text" name="country" placeholder="Province" required value="<?php echo $country; ?>"></td>
+							<td>Country:</td>
+							<td><input type="text" name="country" placeholder="Country" required value="<?php echo $country; ?>"></td>
 						</tr>
 						<tr>
 							<td>ZIP Code:</td>
 							<td><input type="text" name="zipcode" placeholder="ZIP Code" required value="<?php echo $zipcode; ?>" maxlength="4"></td>
-						</tr>
-						<tr>
-							<td>Mobile Number:</td>
-							<td><input type="text" name="mobile" placeholder="Mobile Number" value="<?php echo $mobile; ?>" maxlength="11"></td>
 						</tr>
 						<tr>
 							<td>Telephone Number:</td>
@@ -103,7 +68,7 @@ include("db/dbconn.php");
 						</tr>
 						<tr>
 							<td></td>
-							<td><input type="submit" name="edit" value="Save Changes" class="btn btn-primary">&nbsp;<a href="product.php"><input type="button" name="cancel" value="Cancel" class="btn btn-danger"></a></td>
+							<td><input type="submit" name="edit" value="Save Changes" class="btn btn-primary">&nbsp;<a href="index.php"><input type="button" name="cancel" value="Cancel" class="btn btn-danger"></a></td>
 						</tr>
 					</table>
 				</center>

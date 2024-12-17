@@ -21,7 +21,6 @@ include("../db/dbconn.php");
 				<li><a href="admin_home.php">Dashboard</a></li>
 				<li><a href="admin_home.php">Products</a>
 					<ul>
-						<li><a href="admin_feature.php ">Features</a></li>
 						<li><a href="admin_product.php ">Basketball</a></li>
 						<li><a href="admin_football.php">Football</a></li>
 						<li><a href="admin_running.php">Running</a></li>
@@ -56,7 +55,7 @@ include("../db/dbconn.php");
 						while ($fetch = mysqli_fetch_array($query)) {
 						?>
 							<tr>
-								<td style="text-align: center; align-self:center; width:174px"><?php echo $fetch['firstname']; ?>&nbsp;<?php echo $fetch['mi']; ?>&nbsp;<?php echo  $fetch['lastname']; ?></td>
+								<td style="text-align: center; align-self:center; width:174px"><?php echo $fetch['name']; ?></td>
 								<td style="text-align: center; align-self:center; width:174px"><?php echo $fetch['address'] ?></td>
 								<td style="text-align: center; align-self:center; width:174px"><?php echo $fetch['country'] ?></td>
 								<td style="text-align: center; align-self:center; width:174px"><?php echo $fetch['zipcode'] ?></td>

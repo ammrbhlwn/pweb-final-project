@@ -1,4 +1,3 @@
-<!--Add Administrator facebox-->
 <div>
 	<?php
 	include("../db/dbconn.php");

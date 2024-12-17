@@ -34,7 +34,7 @@ include("db/dbconn.php");
 				?>
 					<ul>
 						<li><a href="function/logout.php">Logout</a></li>
-						<li><a href="#profile" data-toggle="modal"><?php echo $fetch['firstname'] . " " . $fetch['lastname']; ?></a></li>
+						<li><a href="account.php"><?php echo $fetch['name']; ?></a></li>
 					</ul>
 				<?php } else { ?>
 					<a href="#login" data-toggle="modal" class="btn-auth">Login</a>
@@ -62,7 +62,7 @@ include("db/dbconn.php");
 						<table>
 							<tr>
 								<td class="profile">Name:</td>
-								<td class="profile"><?php echo $fetch['firstname']; ?>&nbsp;<?php echo $fetch['mi']; ?>&nbsp;<?php echo $fetch['lastname']; ?></td>
+								<td class="profile"><?php echo $fetch['name']; ?></td>
 							</tr>
 							<tr>
 								<td class="profile">Address:</td>
@@ -75,10 +75,6 @@ include("db/dbconn.php");
 							<tr>
 								<td class="profile">ZIP Code:</td>
 								<td class="profile"><?php echo $fetch['zipcode']; ?></td>
-							</tr>
-							<tr>
-								<td class="profile">Mobile Number:</td>
-								<td class="profile"><?php echo $fetch['mobile']; ?></td>
 							</tr>
 							<tr>
 								<td class="profile">Telephone Number:</td>
@@ -218,25 +214,6 @@ include("db/dbconn.php");
 		</div>
 	</main>
 
-	<div id="purchase" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:400px;">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-			<h3 id="myModalLabel">Mode Of Payment</h3>
-		</div>
-		<div class="modal-body">
-			<form method="post">
-				<center>
-					<input type="image" src="images/button.jpg" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" />
-					<br />
-					<br />
-					<button class="btn btn-lg">Cash</button>
-				</center>
-		</div>
-		<div class="modal-footer">
-			<button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Close</button>
-			</form>
-		</div>
-	</div>
 	<footer>
 		<div class="footer-container">
 			<a href="index.php" class="logo-container">

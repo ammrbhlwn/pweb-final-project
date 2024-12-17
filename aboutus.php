@@ -34,7 +34,7 @@ include("db/dbconn.php");
 				?>
 					<ul>
 						<li><a href="function/logout.php">Logout</a></li>
-						<li><a href="#profile" data-toggle="modal"><?php echo $fetch['firstname'] . " " . $fetch['lastname']; ?></a></li>
+						<li><a href="account.php"><?php echo $fetch['name']; ?></a></li>
 					</ul>
 				<?php } else { ?>
 					<a href="#login" data-toggle="modal" class="btn-auth">Login</a>
@@ -71,13 +71,10 @@ include("db/dbconn.php");
 		<div class="modal-body">
 			<center>
 				<form method="post">
-					<input type="text" name="firstname" placeholder="Firstname" required>
-					<input type="text" name="mi" placeholder="Middle Initial" maxlength="1" required>
-					<input type="text" name="lastname" placeholder="Lastname" required>
+					<input type="text" name="name" placeholder="name" required>
 					<input type="text" name="address" placeholder="Address" style="width:430px;" required>
-					<input type="text" name="country" placeholder="Province" required>
+					<input type="text" name="country" placeholder="Country" required>
 					<input type="text" name="zipcode" placeholder="ZIP Code" required maxlength="4">
-					<input type="text" name="mobile" placeholder="Mobile Number" maxlength="11">
 					<input type="text" name="telephone" placeholder="Telephone Number" maxlength="8">
 					<input type="email" name="email" placeholder="Email" required>
 					<input type="password" name="password" placeholder="Password" required>

@@ -1,6 +1,6 @@
 <?php
-include("function/login.php");
-include("function/customer_signup.php");
+include("function/session.php");
+include("db/dbconn.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,7 +34,7 @@ include("function/customer_signup.php");
 				?>
 					<ul>
 						<li><a href="function/logout.php">Logout</a></li>
-						<li><a href="#profile" data-toggle="modal"><?php echo $fetch['firstname'] . " " . $fetch['lastname']; ?></a></li>
+						<li><a href="account.php"><?php echo $fetch['name']; ?></a></li>
 					</ul>
 				<?php } else { ?>
 					<a href="#login" data-toggle="modal" class="btn-auth">Login</a>
@@ -81,7 +81,7 @@ include("function/customer_signup.php");
 						<table>
 							<tr>
 								<td class="profile">Name:</td>
-								<td class="profile"><?php echo $fetch['firstname']; ?>&nbsp;<?php echo $fetch['mi']; ?>&nbsp;<?php echo $fetch['lastname']; ?></td>
+								<td class="profile"><?php echo $fetch['name']; ?></td>
 							</tr>
 							<tr>
 								<td class="profile">Address:</td>
@@ -94,10 +94,6 @@ include("function/customer_signup.php");
 							<tr>
 								<td class="profile">ZIP Code:</td>
 								<td class="profile"><?php echo $fetch['zipcode']; ?></td>
-							</tr>
-							<tr>
-								<td class="profile">Mobile Number:</td>
-								<td class="profile"><?php echo $fetch['mobile']; ?></td>
 							</tr>
 							<tr>
 								<td class="profile">Telephone Number:</td>
