@@ -33,7 +33,7 @@ audio:not([controls]) {
 }
 
 html {
-  font-size: 100%;
+  font-size: 8px;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
