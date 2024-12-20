@@ -1,6 +1,8 @@
 <?php
-include("function/session.php");
+session_start();
 include("db/dbconn.php");
+include("function/login.php");
+include("function/customer_signup.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -96,9 +98,9 @@ include("db/dbconn.php");
 
 	<main>
 		<div id="container">
-			<form method="post" class="well" style="background-color:#fff;">
+			<form method="post" class="cart-card">
 				<table class="table">
-					<label style="font-size:25px;">My Cart</label>
+					<label style="font-size: 3rem; margin-bottom:2rem">My Cart</label>
 					<tr>
 						<th>
 							<h3>Image</h3>
@@ -200,16 +202,22 @@ include("db/dbconn.php");
 						echo "</tr>";
 					} else
 						echo "<font color='#111' class='alert alert-error' style='float:right'>Cart is empty</font>";
-
 					?>
 				</table>
 
+				<?php if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) { ?>
+					<div class="pull-right" style="margin-top: 20px;">
+						<a href="product.php" class="btn btn-inverse btn-lg">Continue Shopping</a>
+						<button name="pay_now" type="submit" class="btn btn-inverse btn-lg">Purchase</button>
+						<?php include("function/paypal.php"); ?>
+					</div>
+				<?php } else { ?>
+					<div class="pull-right" style="margin-top: 20px;">
+						<a href="product.php" class="btn btn-inverse btn-lg">Continue Shopping</a>
+					</div>
+				<?php } ?>
 
-				<div class='pull-right'>
-					<a href='product.php' class='btn btn-inverse btn-lg'>Continue Shopping</a>
-					<?php echo "<button name='pay_now' type='submit' class='btn btn-inverse btn-lg' >Purchase</button>";
-					include("function/paypal.php");
-					?>
+
 			</form>
 		</div>
 	</main>

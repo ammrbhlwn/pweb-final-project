@@ -1,6 +1,8 @@
 <?php
-include("function/session.php");
+session_start();
 include("db/dbconn.php");
+include("function/login.php");
+include("function/customer_signup.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,6 +11,7 @@ include("db/dbconn.php");
 	<title>Footwearin.</title>
 	<link rel="icon" href="img/logoFootwearin.png" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<script src="js/jquery-1.7.2.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

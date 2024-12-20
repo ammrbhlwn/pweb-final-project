@@ -1,7 +1,3 @@
-<?php
-include("function/session.php");
-include("db/dbconn.php");
-?>
 <!DOCTYPE html>
 <html>
 
@@ -9,6 +5,7 @@ include("db/dbconn.php");
 	<title>Footwearin.</title>
 	<link rel="icon" href="img/logoFootwearin.png" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<script src="js/jquery-1.7.2.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -33,8 +30,8 @@ include("db/dbconn.php");
 					$fetch = mysqli_fetch_array($query);
 				?>
 					<ul>
-						<li><a href="function/logout.php">Logout</a></li>
-						<li><a href="account.php"><?php echo $fetch['name']; ?></a></li>
+						<li><a href="function/logout.php" class="btn-auth">Logout</a></li>
+						<li><a href="account.php" class="btn-auth"><?php echo $fetch['name']; ?></a></li>
 					</ul>
 				<?php } else { ?>
 					<a href="#login" data-toggle="modal" class="btn-auth">Login</a>

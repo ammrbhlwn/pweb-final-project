@@ -1,6 +1,8 @@
 <?php
-include("function/session.php");
-include("./db/dbconn.php")
+session_start();
+include("db/dbconn.php");
+include("function/login.php");
+include("function/customer_signup.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -105,10 +107,10 @@ include("./db/dbconn.php")
 			?>
 				<div>
 					<center>
-						<img class="img-polaroid" style="width:400px; height:350px;" src="photo/<?php echo $row['product_image']; ?>">
-						<h2 class="text-uppercase bg-primary"><?php echo $row['product_name'] ?></h2>
-						<h3 class="text-uppercase">Rp <?php echo $row['product_price'] ?></h3>
-						<h3 class="text-uppercase">Size: <?php echo $row['product_size'] ?></h3>
+						<img class="img-detail" src="photo/<?php echo $row['product_image']; ?>">
+						<h2 class="name-detail"><?php echo $row['product_name'] ?></h2>
+						<h3 class="price-detail">Rp <?php echo $row['product_price'] ?></h3>
+						<h3 class="size-detail">Size: <?php echo $row['product_size'] ?></h3>
 						<?php echo "<a href='cart.php?id=" . $id . "&action=add'><input type='submit' class='btn btn-inverse' name='add' value='Add to Cart'></a> &nbsp;  <a href='product.php'><button class='btn btn-inverse'>Back</button></a> " ?>
 					</center>
 				</div>

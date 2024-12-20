@@ -11,6 +11,7 @@ include("function/customer_signup.php");
 	<title>Footwearin.</title>
 	<link rel="icon" href="img/logoFootwearin.png" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<script src="js/jquery-1.7.2.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -129,7 +130,7 @@ include("function/customer_signup.php");
 					<li><a href="running.php">Running</a></li>
 				</ul>
 			</form>
-			<?php echo "<a href='cart.php?id=" . $id . "&action=view'><button class='btn-cart'><i class='icon-shopping-cart icon-white'></i></button></a>" ?>
+			<?php echo "<a href='cart.php?id=" . $id . "&action=view'><button class='btn-cart'></button></a>" ?>
 		</div>
 		<div class="product-list">
 			<?php
