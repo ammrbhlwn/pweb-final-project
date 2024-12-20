@@ -1,3 +1,10 @@
+<?php
+session_start();
+include("db/dbconn.php");
+include("function/login.php");
+include("function/customer_signup.php");
+?>
+
 <!DOCTYPE html>
 <html>
 
